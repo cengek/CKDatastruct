@@ -5,6 +5,7 @@ int main() {
     tree T;
     makeTree( &T, 'A');
     addChild(T.root, 'B');
+	addChild(T.root, 'B');
     addChild(T.root, 'C');
     addChild(T.root, 'D');
     addChild(T.root->child, 'E');
@@ -13,6 +14,7 @@ int main() {
 
     printf("Level Order\n");
     printTreeLevelOrder(T.root);
+	printTreeLevelOrder(T.root);
     printf("\n");
     return 0;
-}
+}}

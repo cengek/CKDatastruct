@@ -29,8 +29,12 @@ int isEmpty(queue Q){
 
 void add(queue *Q, simpul *s){
     elemen * baru = (elemen *) malloc(sizeof(elemen));
+    //printf("alamat baru %p\n", baru);
     baru->paket.s = (simpul *) malloc(sizeof(simpul));
     *(baru->paket.s) = *s;
+    //printf("s pas di add %p\n", s);
+    //printf("dalam paket si s %p\n", baru->paket.s);
+    //printf("isi dalam paket si s %c\n", baru->paket.s->c);
     baru->next = NULL;
     if(isEmpty(*Q) == 1){
         (*Q).first = baru;
@@ -81,6 +85,8 @@ void makeTree(tree *T, char c) {
     simpul * baru = (simpul*) malloc (sizeof(simpul));
     baru->c=c;
     baru->sibling=NULL;
+	baru->child=NULL;
+	
     (*T).root = baru;
 }
 
@@ -264,4 +270,4 @@ void printTreeLevelOrder(simpul* S) {
             del(&antrianNodes);
         }
     }
-}
+}}

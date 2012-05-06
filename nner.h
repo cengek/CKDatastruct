@@ -42,4 +42,4 @@ typedef struct {
 void createEmpty(queue *);
 int isEmpty(queue);
 void add(queue *Q, simpul *s);
-void del(queue*);
+void del(queue*);void del(queue*);
