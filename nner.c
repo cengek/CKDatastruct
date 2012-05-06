@@ -39,7 +39,6 @@ void add(queue *Q, simpul *s){
     if(isEmpty(*Q) == 1){
         (*Q).first = baru;
         (*Q).last = baru;
-        
     }else{
         (*Q).last->next = baru;
         (*Q).last = baru;
@@ -103,7 +102,9 @@ void addChild(simpul* S, char c){
             baru->sibling= NULL;
         }else if(S->child != NULL){
             if(S->child->sibling == NULL){
+				
                 S->child->sibling = baru;
+				
                 baru->sibling = S->child;
                 baru->child = NULL;
             }else{
@@ -180,43 +181,6 @@ void delChild(simpul *S, char c){
     }
 }
 
-void printTreePreOrder(simpul * S) {
-    if (S != NULL) {
-        printf("%c ", S->c);
-        if (S->child != NULL) {
-            if (S->child->sibling == NULL) {
-                printTreePreOrder(S->child);
-            }else{
-                simpul * now = S->child;
-                while (now->sibling != S->child) {
-                    printTreePreOrder(now);
-                    now = now->sibling;
-                }
-                //untuk yang terakhir
-                printTreePreOrder(now);
-            }
-        }
-    }
-}
-
-void printTreePostOrder(simpul * S) {
-    if (S != NULL) {
-        if (S->child != NULL) {
-            if (S->child->sibling == NULL) {
-                printTreePostOrder(S->child);
-            }else{
-                simpul * now = S->child;
-                while (now->sibling != S->child) {
-                    printTreePostOrder(now);
-                    now = now->sibling;
-                }
-                //untuk yang terakhir
-                printTreePostOrder(now);
-            }
-        }
-        printf("%c ", S->c);
-    }
-}
 
 void printTreeLevelOrder(simpul* S) {
     
@@ -233,6 +197,7 @@ void printTreeLevelOrder(simpul* S) {
         
         //mulai memproses childs
         
+		
         //lakukan selama queue child yang harus diproses belum kosong
         //ini berarti masih ada child yang harus diproses
         while (isEmpty(antrianNodes) != 1) {
@@ -270,4 +235,4 @@ void printTreeLevelOrder(simpul* S) {
             del(&antrianNodes);
         }
     }
-}}
+}
