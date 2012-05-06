@@ -29,30 +29,19 @@ int isEmpty(queue Q){
 
 void add(queue *Q, simpul *s){
     elemen * baru = (elemen *) malloc(sizeof(elemen));
-    //printf("alamat baru %p\n", baru);
     baru->paket.s = (simpul *) malloc(sizeof(simpul));
-    baru->paket.s = s;
-    //printf("s pas di add %p\n", s);
-    //printf("dalam paket si s %p\n", baru->paket.s);
-    //printf("isi dalam paket si s %c\n", baru->paket.s->c);
+    *(baru->paket.s) = *s;
     baru->next = NULL;
-    //printf("isinya next %p\n", baru->next);
-    
     if(isEmpty(*Q) == 1){
         (*Q).first = baru;
         (*Q).last = baru;
         
-        //printf("isinya (*Q).first %p\n", (*Q).first);
-        //printf("isinya (*Q).last %p\n", (*Q).last);
-        //printf("isinya (*Q).last->paket.s %p\n", (*Q).last->paket.s);
     }else{
         (*Q).last->next = baru;
         (*Q).last = baru;
     }
     
     (*Q).jumlahElemen++;
-    //printf("jumlah elemen %d\n", (*Q).jumlahElemen);
-    //printf("last %p\n", (*Q).last->paket.s);
 }
 
 void del(queue * Q){
