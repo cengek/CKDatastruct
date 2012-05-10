@@ -31,7 +31,7 @@ void add(queue *Q, simpul *s){
     elemen * baru = (elemen *) malloc(sizeof(elemen));
     //printf("alamat baru %p\n", baru);
     baru->paket.s = (simpul *) malloc(sizeof(simpul));
-    *(baru->paket.s) = *s;
+    (baru->paket.s) = s;
     //printf("s pas di add %p\n", s);
     //printf("dalam paket si s %p\n", baru->paket.s);
     //printf("isi dalam paket si s %c\n", baru->paket.s->c);
